@@ -14,14 +14,14 @@ class DARCommandCommandsUpdatePackage(DARCommandCommon):
     @staticmethod
     def get_definition():
         """
-        * Install Operating System dependencies:
+        * Update dar-command package:
             ```bash
-            dar-command.py install_os_dependencies
+            dar-command.py update
             ```
         """
         return {
-            "name": "install_os_dependencies",
-            "description": """Install Operating System dependencies""",
+            "name": "update",
+            "description": """Update dar-command package""",
             "arguments": [],
         }
 

@@ -53,3 +53,8 @@ DAR Command - Django Applications Robot Command
     ```bash
     dar-command.py install_pip_dependencies
     ```
+
+* Update dar-command package:
+    ```bash
+    dar-command.py update
+    ```
