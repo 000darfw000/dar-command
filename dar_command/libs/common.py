@@ -12,3 +12,6 @@ class DARCommandCommon(object):
         self.parser = argparse.ArgumentParser(
             "DAR command line interface"
         )
+        self.subparsers = self.parser.add_subparsers(
+            dest='subparser_name'
+        )
