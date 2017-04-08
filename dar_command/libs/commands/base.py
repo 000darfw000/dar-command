@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 
+from ..common import DARCommandCommon
+
 from .startproject import DARCommandCommandsStartproject
 from .bower_dependencies import DARCommandCommandsBower
 from .os_dependencies import DARCommandCommandsOS
 from .pip_dependencies import DARCommandCommandsPIP
+from .update_package import DARCommandCommandsUpdatePackage
 
 
-class DARCommandCommands(object):
+class DARCommandCommands(DARCommandCommon):
     def __init__(self, subparsers):
         """ Constructor
         """
@@ -23,6 +26,7 @@ class DARCommandCommands(object):
             DARCommandCommandsBower,
             DARCommandCommandsOS,
             DARCommandCommandsPIP,
+            DARCommandCommandsUpdatePackage,
         ]
 
     def setup(self):

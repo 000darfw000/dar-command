@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 
+import os
+
 from ..common import DARCommandCommon
 
 
-class DARCommandCommandsBower(DARCommandCommon):
+class DARCommandCommandsUpdatePackage(DARCommandCommon):
     def __init__(self, args):
         """ Constructor
         """
@@ -12,14 +14,14 @@ class DARCommandCommandsBower(DARCommandCommon):
     @staticmethod
     def get_definition():
         """
-        * Install bower dependencies:
+        * Install Operating System dependencies:
             ```bash
-            dar-command.py install_bower_dependencies
+            dar-command.py install_os_dependencies
             ```
         """
         return {
-            "name": "install_bower_dependencies",
-            "description": """Install bower dependencies""",
+            "name": "install_os_dependencies",
+            "description": """Install Operating System dependencies""",
             "arguments": [],
         }
 
@@ -27,9 +29,9 @@ class DARCommandCommandsBower(DARCommandCommon):
         """ Execute
         """
         command_arguments = [
-            "bower",
-            "update",
-            "--allow-root",
-            "--save"
+            "pip",
+            "install",
+            "-U",
+            self.DAR_COMMAND_PACKAGE,
         ]
         self.run_command(command_arguments)
