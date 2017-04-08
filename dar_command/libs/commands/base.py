@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from .startproject import DARCommandCommandsStartproject
+from .bower_dependencies import DARCommandCommandsBower
 
 
 class DARCommandCommands(object):
@@ -17,6 +18,7 @@ class DARCommandCommands(object):
         """
         return [
             DARCommandCommandsStartproject,
+            DARCommandCommandsBower,
         ]
 
     def setup(self):

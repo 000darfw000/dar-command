@@ -38,3 +38,8 @@ DAR Command - Django Applications Robot Command
     (dartest) aricalso@000rayuela000:/home/aricalso/instances$ dar-command.py startproject -n dartest -b ~/instances
     (dartest) aricalso@000rayuela000:/home/aricalso/instances/dartest$
     ```
+
+* Install bower dependencies:
+    ```bash
+    dar-command.py install_bower_dependencies
+    ```
