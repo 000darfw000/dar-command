@@ -58,3 +58,10 @@ DAR Command - Django Applications Robot Command
     ```bash
     dar-command.py update
     ```
+    
+* Run migrations:
+    ```bash
+    # This runs makemigrations and migrate
+     
+    dar-command.py migrate
+    ```

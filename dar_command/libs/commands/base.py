@@ -7,6 +7,7 @@ from .bower_dependencies import DARCommandCommandsBower
 from .os_dependencies import DARCommandCommandsOS
 from .pip_dependencies import DARCommandCommandsPIP
 from .update_package import DARCommandCommandsUpdatePackage
+from .migrations import DARCommandCommandsMigrations
 
 
 class DARCommandCommands(DARCommandCommon):
@@ -27,6 +28,7 @@ class DARCommandCommands(DARCommandCommon):
             DARCommandCommandsOS,
             DARCommandCommandsPIP,
             DARCommandCommandsUpdatePackage,
+            DARCommandCommandsMigrations,
         ]
 
     def setup(self):
