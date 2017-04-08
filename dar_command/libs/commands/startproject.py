@@ -5,6 +5,8 @@ import os
 from .common import DARCommandCommandsCommon
 from ..exceptions import DARException
 from .bower_dependencies import DARCommandCommandsBower
+from os_dependencies import DARCommandCommandsOS
+from pip_dependencies import DARCommandCommandsPIP
 
 
 class DARCommandCommandsStartproject(DARCommandCommandsCommon):
@@ -174,6 +176,12 @@ class DARCommandCommandsStartproject(DARCommandCommandsCommon):
         self.mv(dar_skeleton_dir, self.project_directory)
         self.remove_directory(dar_skeleton_dir)
 
+    def install_os_dependencies(self):
+        DARCommandCommandsOS(self.args).execute()
+
+    def install_pip_dependencies(self):
+        DARCommandCommandsPIP(self.args).execute()
+
     def install_bower(self):
         DARCommandCommandsBower(self.args).execute()
 
@@ -184,4 +192,6 @@ class DARCommandCommandsStartproject(DARCommandCommandsCommon):
         self.goto_project_directory()
         self.create_django_project()
         self.export_skeleton()
+        self.install_os_dependencies()
+        self.install_pip_dependencies()
         self.install_bower()

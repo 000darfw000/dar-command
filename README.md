@@ -43,3 +43,13 @@ DAR Command - Django Applications Robot Command
     ```bash
     dar-command.py install_bower_dependencies
     ```
+
+* Install Operating System dependencies:
+    ```bash
+    dar-command.py install_os_dependencies
+    ```
+
+* Install pip dependencies:
+    ```bash
+    dar-command.py install_pip_dependencies
+    ```
