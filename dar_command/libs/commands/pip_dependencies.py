@@ -43,3 +43,18 @@ class DARCommandCommandsPIP(DARCommandCommon):
         ]
 
         self.run_command(command_arguments)
+
+        pip_file = os.path.join(
+            self.get_instance_dir(),
+            "dependencies",
+            "requirements.txt"
+        )
+
+        command_arguments = [
+            "pip",
+            "install",
+            "-U",
+            "-r",
+            pip_file
+        ]
+
