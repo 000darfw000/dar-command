@@ -2,6 +2,8 @@
 
 from .startproject import DARCommandCommandsStartproject
 from .bower_dependencies import DARCommandCommandsBower
+from .os_dependencies import DARCommandCommandsOS
+from .pip_dependencies import DARCommandCommandsPIP
 
 
 class DARCommandCommands(object):
@@ -19,6 +21,8 @@ class DARCommandCommands(object):
         return [
             DARCommandCommandsStartproject,
             DARCommandCommandsBower,
+            DARCommandCommandsOS,
+            DARCommandCommandsPIP,
         ]
 
     def setup(self):
