@@ -28,14 +28,10 @@ class DARCommandCommandsUpdatePackage(DARCommandCommon):
     def execute(self):
         """ Execute
         """
-        os_file = os.path.join(
-            self.get_package_dir(),
-            "dependencies",
-            "os.sh"
-        )
-
         command_arguments = [
-            "sh",
-            os_file
+            "pip",
+            "install",
+            "-U",
+            self.DAR_COMMAND_PACKAGE,
         ]
         self.run_command(command_arguments)
