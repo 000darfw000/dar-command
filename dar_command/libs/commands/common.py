@@ -25,3 +25,16 @@ class DARCommandCommandsCommon(object):
     @staticmethod
     def run_command(arguments):
         subprocess.call(arguments)
+
+    @staticmethod
+    def mv(source, target):
+        for item in os.listdir(source):
+            source_item = os.path.join(
+                source,
+                item
+            )
+            target_item = os.path.join(
+                target,
+                item
+            )
+            shutil.move(source_item, target_item)

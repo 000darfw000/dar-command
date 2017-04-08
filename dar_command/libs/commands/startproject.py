@@ -11,6 +11,7 @@ class DARCommandCommandsStartproject(DARCommandCommandsCommon):
     DEFAULT_BASEDIR = None
     DEFAULT_OVERWRITE = False
     DJANGO_ADMIN = "django-admin.py"
+    SKELETON_REPO = "https://github.com/000darfw000/dar-skeleton.git"
 
     def __init__(self, args):
         """ Constructor
@@ -152,9 +153,30 @@ class DARCommandCommandsStartproject(DARCommandCommandsCommon):
         """
         self.goto_directory(self.project_directory)
 
+    def export_skeleton(self):
+        """ Export dar-skeleton to the project
+        """
+        url = u"{}/trunk/dar_skeleton/".format(
+            self.SKELETON_REPO
+        )
+
+        command_arguments = [
+            "svn",
+            "export",
+            url
+        ]
+
+        self.run_command(command_arguments)
+
+        # Copy dar_skeleton content and remove this directory
+        dar_skeleton_dir = os.path.join(self.project_directory, "dar_skeleton")
+        self.mv(dar_skeleton_dir, self.project_directory)
+        self.remove_directory(dar_skeleton_dir)
+
     def execute(self):
         """ Execute
         """
         self.create_project_directory()
         self.goto_project_directory()
         self.create_django_project()
+        self.export_skeleton()
