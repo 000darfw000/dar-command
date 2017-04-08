@@ -2,10 +2,10 @@
 
 import os
 
-from .common import DARCommandCommandsCommon
+from ..common import DARCommandCommon
 
 
-class DARCommandCommandsOS(DARCommandCommandsCommon):
+class DARCommandCommandsOS(DARCommandCommon):
     def __init__(self, args):
         """ Constructor
         """

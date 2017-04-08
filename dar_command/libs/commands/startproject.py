@@ -2,14 +2,15 @@
 
 import os
 
-from .common import DARCommandCommandsCommon
+from ..common import DARCommandCommon
+
 from ..exceptions import DARException
 from .bower_dependencies import DARCommandCommandsBower
 from os_dependencies import DARCommandCommandsOS
 from pip_dependencies import DARCommandCommandsPIP
 
 
-class DARCommandCommandsStartproject(DARCommandCommandsCommon):
+class DARCommandCommandsStartproject(DARCommandCommon):
     DEFAULT_NAME = "darproject"
     DEFAULT_BASEDIR = None
     DEFAULT_OVERWRITE = False
