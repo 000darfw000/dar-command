@@ -72,3 +72,10 @@ DAR Command - Django Applications Robot Command
      
     dar-command.py liveserver
     ```
+
+* Create system users (admin, system, prueba):
+    ```bash
+    # This command create system users
+     
+    dar-command.py create_system_users
+    ```
