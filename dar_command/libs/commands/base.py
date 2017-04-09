@@ -8,6 +8,7 @@ from .os_dependencies import DARCommandCommandsOS
 from .pip_dependencies import DARCommandCommandsPIP
 from .update_package import DARCommandCommandsUpdatePackage
 from .migrations import DARCommandCommandsMigrations
+from .liveserver import DARCommandCommandsLive
 
 
 class DARCommandCommands(DARCommandCommon):
@@ -29,6 +30,7 @@ class DARCommandCommands(DARCommandCommon):
             DARCommandCommandsPIP,
             DARCommandCommandsUpdatePackage,
             DARCommandCommandsMigrations,
+            DARCommandCommandsLive,
         ]
 
     def setup(self):

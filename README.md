@@ -65,3 +65,10 @@ DAR Command - Django Applications Robot Command
      
     dar-command.py migrate
     ```
+
+* Run live server port 9500:
+    ```bash
+    # This runs liverserver at port 9500
+     
+    dar-command.py liveserver
+    ```
