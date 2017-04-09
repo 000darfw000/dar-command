@@ -6,3 +6,6 @@ prune .git
 prune .gitignore
 include LICENSE
 include README.md
+
+recursive-include dar_command/dependencies *
+recursive-include dar_command/fixtures *
